@@ -1,0 +1,50 @@
+#include<conio.h>
+#include<stdio.h>
+void main()
+{
+             int i,j,b=65,c=65,d=65,t[20];
+            char s[20],a[26][26];
+            clrscr();
+            for(i=0;i<26;i++)
+            {
+                    for(j=0;j<26;j++)
+                   {
+                           if(b<91)
+                          {
+                                  a[i][j]=b;
+                                  b++;
+                          }
+                          else
+                          {
+                                  a[i][j]=d;
+                                  d++;
+                          }
+                  }
+                  c++;
+                  b=c;
+                 d=65;
+            }
+            for(i=0;i<26;i++)
+            {
+                  for(j=0;j<26;j++)
+                  {
+                          printf("%c",a[i][j]);
+                  }
+                  printf("\n");
+            }
+            printf("\nEnter the text : ");
+            gets(s);
+            for(i=0;i<strlen(s);i++)
+            {
+                  t[i]=s[i]-65;
+            }
+            for(i=0;i<strlen(s);i++)
+            {
+            s[i]=(a[t[i]][i]);
+            }
+            for(i=0;i<strlen(s);i++)
+            {
+            printf("%c",s[i]);
+            }
+            getch();
+}
